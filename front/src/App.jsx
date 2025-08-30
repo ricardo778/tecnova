@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
+import Carrito from './components/carrito';
 import './index.css';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <Navbar />
         <main className="main-content">
           <Routes>
-            {/* Tus rutas aquí */}
+            <Route path="/carrito" element={<Carrito />} />
           </Routes>
         </main>
         <Footer />
