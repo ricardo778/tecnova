@@ -29,11 +29,11 @@ function Footer() {
           <div className="contact-info">
             <p>
               <i className="fas fa-envelope"></i>
-              <span>info@tecnova.com</span>
+              <span>tecnova@gmail.com</span>
             </p>
             <p>
               <i className="fas fa-phone"></i>
-              <span>+1 (123) 456-7890</span>
+              <span>+57 324 780 5341</span>
             </p>
             <p>
               <i className="fas fa-map-marker-alt"></i>
@@ -70,7 +70,7 @@ function Footer() {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; 2023 Tecnova. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Tecnova. Todos los derechos reservados.</p>
         <p>
           <a href="#">Términos y Condiciones</a> | 
           <a href="#"> Política de Privacidad</a>

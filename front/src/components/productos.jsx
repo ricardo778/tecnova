@@ -206,7 +206,7 @@ function Products() {
             className="search-input"
           />
           {searchTerm && (
-            <button 
+            <button
               className="clear-search"
               onClick={() => setSearchTerm('')}
             >
@@ -245,7 +245,7 @@ function Products() {
           <i className="fas fa-search"></i>
           <h3>No se encontraron productos</h3>
           <p>Intenta con otros términos de búsqueda o categorías</p>
-          <button 
+          <button
             className="reset-filters"
             onClick={() => {
               setSearchTerm('');
@@ -262,12 +262,6 @@ function Products() {
       <div className="products-grid">
         {filteredProducts.map(product => (
           <div key={product.id} className="product-card">
-            {/* Badges */}
-            <div className="product-badges">
-              {product.isNew && <span className="badge new">Nuevo</span>}
-              {product.discount && <span className="badge discount">-{product.discount}%</span>}
-              {product.stock < 10 && <span className="badge stock">¡Últimas unidades!</span>}
-            </div>
 
             {/* Imagen del producto */}
             <div className="product-image">
@@ -283,26 +277,12 @@ function Products() {
             <div className="product-info">
               <h3 className="product-title">{product.name}</h3>
               <p className="product-description">{product.description}</p>
-              
-              {/* Rating */}
-              <div className="product-rating">
-                <div className="stars">
-                  {[...Array(5)].map((_, i) => (
-                    <i 
-                      key={i} 
-                      className={`fas fa-star ${i < Math.floor(product.rating) ? 'filled' : ''}`}
-                    ></i>
-                  ))}
-                </div>
-                <span className="rating-text">({product.reviews})</span>
-              </div>
 
               {/* Precio */}
               <div className="product-price">
                 {product.originalPrice ? (
                   <>
                     <span className="current-price">{formatPrice(product.price)}</span>
-                    <span className="original-price">{formatPrice(product.originalPrice)}</span>
                   </>
                 ) : (
                   <span className="current-price">{formatPrice(product.price)}</span>
@@ -317,13 +297,9 @@ function Products() {
                 </span>
               </div>
 
-              {/* Acciones */}
+              {/* Acciones - SOLO BOTÓN VER MÁS */}
               <div className="product-actions">
-                <button className="add-to-cart">
-                  <i className="fas fa-shopping-cart"></i>
-                  Añadir al carrito
-                </button>
-                <Link to={`/producto/${product.id}`} className="view-details">
+                <Link to={`/producto/${product.id}`} className="view-details full-width">
                   <i className="fas fa-info-circle"></i>
                   Ver más
                 </Link>
