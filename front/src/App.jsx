@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/navbar';
-import Footer from './components/footer';
-import Carrito from './components/carrito';
-import Login from './components/loguin_usu';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Carrito from './components/Carrito';
+import Login from './components/login';        // Nombre corregido
+import AdminLogin from './components/adminlogin'; // Nombre corregido
 import './index.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route path="/carrito" element={<Carrito />} />
+            <Route path="/admin-login" element={<AdminLogin />} /> {/* Ruta corregida */}
           </Routes>
         </main>
         <Footer />
