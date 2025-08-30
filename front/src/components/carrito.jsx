@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import '../styler.css/carrito.css';
 
 function Carrito() {
-  // Datos de ejemplo para el carrito
   const cartItems = [
     {
       id: 1,

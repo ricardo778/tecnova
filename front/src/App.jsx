@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar';
 import Footer from './components/footer';
 import Carrito from './components/carrito';
+import Login from './components/loguin_usu';
 import './index.css';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <main className="main-content">
           <Routes>
+            <Route path="/login" element={<Login />} />
             <Route path="/carrito" element={<Carrito />} />
           </Routes>
         </main>
