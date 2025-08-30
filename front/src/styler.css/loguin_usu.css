@@ -79,12 +79,13 @@
 
 .input-with-icon input {
   width: 100%;
-  padding: 1rem 1rem 1rem 3rem;
+  padding: 1rem 3rem 1rem 3rem;
   border: 2px solid #e1e5eb;
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
   outline: none;
+  box-sizing: border-box;
 }
 
 .input-with-icon input:focus {
@@ -101,6 +102,13 @@
   color: #666;
   cursor: pointer;
   font-size: 1rem;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }
 
 .form-options {
@@ -132,12 +140,12 @@
   transition: all 0.3s ease;
 }
 
-.checkbox-container input:checked + .checkmark {
+.checkbox-container input:checked+.checkmark {
   background: #4776E6;
   border-color: #4776E6;
 }
 
-.checkbox-container input:checked + .checkmark::after {
+.checkbox-container input:checked+.checkmark::after {
   content: '';
   position: absolute;
   left: 5px;
@@ -318,11 +326,11 @@
   .login-container {
     grid-template-columns: 1fr;
   }
-  
+
   .login-hero {
     display: none;
   }
-  
+
   .login-card {
     min-height: 100vh;
   }
@@ -332,18 +340,25 @@
   .login-card {
     padding: 1.5rem;
   }
-  
+
   .social-login {
     grid-template-columns: 1fr;
   }
-  
+
   .form-options {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-  
+
   .hero-content h2 {
     font-size: 2rem;
+  }
+
+  .input-with-icon i:first-of-type {
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
   }
 }

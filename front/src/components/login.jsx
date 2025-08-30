@@ -22,7 +22,7 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simular proceso de login
     setTimeout(() => {
       console.log('Datos de login:', formData);
@@ -61,9 +61,12 @@ function Login() {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Contraseña</label>
-            <div className="input-with-icon">
+            <label htmlFor="password">
               <i className="fas fa-lock"></i>
+              Contraseña
+            </label>
+            <div className="input-with-icon">
+              <i className="fas fa-lock"></i> {/* Icono izquierdo */}
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
@@ -73,8 +76,8 @@ function Login() {
                 placeholder="Ingresa tu contraseña"
                 required
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 className="toggle-password"
                 onClick={() => setShowPassword(!showPassword)}
               >
@@ -93,14 +96,14 @@ function Login() {
               <span className="checkmark"></span>
               Recordar mi cuenta
             </label>
-            
+
             <Link to="/forgot-password" className="forgot-password">
               ¿Olvidaste tu contraseña?
             </Link>
           </div>
 
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className={`login-btn ${isLoading ? 'loading' : ''}`}
             disabled={isLoading}
           >

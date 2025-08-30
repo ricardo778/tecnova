@@ -6,6 +6,7 @@ import Carrito from './components/Carrito';
 import Login from './components/login';       
 import AdminLogin from './components/adminlogin'; 
 import Register from './components/registro'
+import Productos from './components/productos';
 import './index.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/carrito" element={<Carrito />} />
             <Route path="/admin-login" element={<AdminLogin />} />
             <Route path="/registro" element={<Register />} />
+            <Route path="/productos" element={<Productos />} />
           </Routes>
         </main>
         <Footer />
