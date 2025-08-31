@@ -125,6 +125,9 @@ function Carrito() {
         <h1><i className="fas fa-shopping-cart"></i> Mi Carrito</h1>
         <p>{cartItems.length} producto{cartItems.length !== 1 ? 's' : ''} en tu carrito</p>
       </div>
+      <center>
+        
+      </center>
 
       <div className="carrito-content">
         <div className="carrito-items">
@@ -215,7 +218,7 @@ function Carrito() {
               <div className="discount-input">
                 <input 
                   type="text" 
-                  placeholder="Código de descuento" 
+                  placeholder="Código de descuento (opcional)" 
                   value={discountCode}
                   onChange={(e) => setDiscountCode(e.target.value)}
                   disabled={discountApplied}

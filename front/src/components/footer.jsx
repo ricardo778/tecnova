@@ -37,7 +37,7 @@ function Footer() {
             </p>
             <p>
               <i className="fas fa-map-marker-alt"></i>
-              <span>Av. Tecnología #123, Ciudad Digital</span>
+              <span>Calle 104 Nro 69 120, Medellín, Antioquia, Colombia, Antioquia</span>
             </p>
           </div>
         </div>

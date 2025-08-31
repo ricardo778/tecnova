@@ -29,7 +29,7 @@ function Products() {
         price: 4299000,
         originalPrice: 4799000,
         description: 'Intel Core i7, 16GB RAM, RTX 3060, 512GB SSD',
-        image: 'https://placehold.co/300x200/4776E6/FFFFFF?text=Laptop+Gaming',
+        image: 'https://images.unsplash.com/photo-1603302576837-37561b2e2302?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGxapacHRvcCUyMGdhbWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
         category: 'laptops',
         stock: 15,
         rating: 4.8,
@@ -42,7 +42,7 @@ function Products() {
         name: 'iPhone 15 Pro Max',
         price: 5999000,
         description: '256GB, Titanio, Cámara Triple 48MP',
-        image: 'https://placehold.co/300x200/8E54E9/FFFFFF?text=iPhone+15',
+        image: 'https://images.unsplash.com/photo-1592750475338-74b7b21085ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fGlwaG9uZSUyMDE1JTIwcHJvfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
         category: 'smartphones',
         stock: 8,
         rating: 4.9,
@@ -55,7 +55,7 @@ function Products() {
         price: 2899000,
         originalPrice: 3299000,
         description: '12.4", 8GB RAM, 256GB, S Pen incluido',
-        image: 'https://placehold.co/300x200/FF3366/FFFFFF?text=Tablet+S9',
+        image: 'https://images.unsplash.com/photo-1623125016174-8b3b527d0e63?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRhYmxldHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
         category: 'tablets',
         stock: 22,
         rating: 4.7,
@@ -67,7 +67,7 @@ function Products() {
         name: 'Audífonos Sony WH-1000XM5',
         price: 1599000,
         description: 'Cancelación de ruido, 30h batería',
-        image: 'https://placehold.co/300x200/43cea2/FFFFFF?text=Audífonos+Sony',
+        image: 'https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8aGVhZHBob25lc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
         category: 'audio',
         stock: 30,
         rating: 4.8,
@@ -79,7 +79,7 @@ function Products() {
         price: 899000,
         originalPrice: 1099000,
         description: 'RGB, switches mecánicos, anti-ghosting',
-        image: 'https://placehold.co/300x200/185a9d/FFFFFF?text=Teclado+Razer',
+        image: 'https://images.unsplash.com/photo-1541140532154-b024d705b90a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGtleWJvYXJkfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
         category: 'accesorios',
         stock: 45,
         rating: 4.6,
@@ -91,7 +91,7 @@ function Products() {
         name: 'PlayStation 5',
         price: 2599000,
         description: '1TB, Control DualSense, 4K',
-        image: 'https://placehold.co/300x200/FF8A5B/FFFFFF?text=PS5',
+        image: 'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cHM1fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60',
         category: 'gaming',
         stock: 5,
         rating: 4.9,
@@ -104,7 +104,7 @@ function Products() {
         price: 1899000,
         originalPrice: 2199000,
         description: '27" 4K, 144Hz, IPS, G-Sync',
-        image: 'https://placehold.co/300x200/4776E6/FFFFFF?text=Monitor+LG',
+        image: 'https://images.unsplash.com/photo-1610484826967-09c5720778c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9uaXRvciUyMGdhbWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
         category: 'accesorios',
         stock: 18,
         rating: 4.7,
@@ -116,7 +116,7 @@ function Products() {
         name: 'Smartwatch Apple Watch Series 9',
         price: 2199000,
         description: 'GPS, 45mm, Resistente al agua',
-        image: 'https://placehold.co/300x200/8E54E9/FFFFFF?text=Apple+Watch',
+        image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXBwbGUlMjB3YXRjaHxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
         category: 'accesorios',
         stock: 25,
         rating: 4.8,
@@ -136,12 +136,10 @@ function Products() {
   useEffect(() => {
     let filtered = products;
 
-    // Filtrar por categoría
     if (selectedCategory !== 'todos') {
       filtered = filtered.filter(product => product.category === selectedCategory);
     }
 
-    // Filtrar por término de búsqueda
     if (searchTerm) {
       filtered = filtered.filter(product =>
         product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -178,8 +176,8 @@ function Products() {
 
   if (loading) {
     return (
-      <div className="products-loading">
-        <div className="loading-spinner">
+      <div className="prod-loading">
+        <div className="prod-loading-spinner">
           <i className="fas fa-spinner fa-spin"></i>
           <p>Cargando productos...</p>
         </div>
@@ -188,33 +186,33 @@ function Products() {
   }
 
   return (
-    <div className="products-container">
-      <div className="products-header">
+    <div className="prod-container">
+      <div className="prod-header">
         <h1>Nuestros Productos</h1>
         <p>Descubre la mejor tecnología al mejor precio</p>
       </div>
 
       {/* Barra de búsqueda */}
-      <div className="search-bar-container">
-        <div className="search-bar">
+      <div className="prod-search-bar-container">
+        <div className="prod-search-bar">
           <i className="fas fa-search"></i>
           <input
             type="text"
             placeholder="Buscar productos, categorías, marcas..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
+            className="prod-search-input"
           />
           {searchTerm && (
             <button
-              className="clear-search"
+              className="prod-clear-search"
               onClick={() => setSearchTerm('')}
             >
               <i className="fas fa-times"></i>
             </button>
           )}
         </div>
-        <div className="search-results-info">
+        <div className="prod-search-results-info">
           {searchTerm && (
             <p>
               {filteredProducts.length} producto{filteredProducts.length !== 1 ? 's' : ''} encontrado{filteredProducts.length !== 1 ? 's' : ''} para "{searchTerm}"
@@ -224,12 +222,12 @@ function Products() {
       </div>
 
       {/* Filtros de categoría */}
-      <div className="categories-filter">
-        <div className="categories-scroll">
+      <div className="prod-categories-filter">
+        <div className="prod-categories-scroll">
           {categories.map(category => (
             <button
               key={category}
-              className={`category-btn ${selectedCategory === category ? 'active' : ''}`}
+              className={`prod-category-btn ${selectedCategory === category ? 'prod-active' : ''}`}
               onClick={() => setSelectedCategory(category)}
             >
               <i className={`fas ${getCategoryIcon(category)}`}></i>
@@ -241,12 +239,12 @@ function Products() {
 
       {/* Mensaje si no hay resultados */}
       {filteredProducts.length === 0 && !loading && (
-        <div className="no-products">
+        <div className="prod-no-products">
           <i className="fas fa-search"></i>
           <h3>No se encontraron productos</h3>
           <p>Intenta con otros términos de búsqueda o categorías</p>
           <button
-            className="reset-filters"
+            className="prod-reset-filters"
             onClick={() => {
               setSearchTerm('');
               setSelectedCategory('todos');
@@ -259,47 +257,48 @@ function Products() {
       )}
 
       {/* Grid de productos */}
-      <div className="products-grid">
+      <div className="prod-grid">
         {filteredProducts.map(product => (
-          <div key={product.id} className="product-card">
+          <div key={product.id} className="prod-card">
 
             {/* Imagen del producto */}
-            <div className="product-image">
+            <div className="prod-image">
               <img src={product.image} alt={product.name} />
-              <div className="product-overlay">
-                <button className="quick-view">
+              <div className="prod-overlay">
+                <button className="prod-quick-view">
                   <i className="fas fa-eye"></i> Vista rápida
                 </button>
               </div>
             </div>
 
             {/* Información del producto */}
-            <div className="product-info">
-              <h3 className="product-title">{product.name}</h3>
-              <p className="product-description">{product.description}</p>
+            <div className="prod-info">
+              <h3 className="prod-title">{product.name}</h3>
+              <p className="prod-description">{product.description}</p>
 
               {/* Precio */}
-              <div className="product-price">
+              <div className="prod-price">
                 {product.originalPrice ? (
                   <>
-                    <span className="current-price">{formatPrice(product.price)}</span>
+                    <span className="prod-current-price">{formatPrice(product.price)}</span>
+                    <span className="prod-original-price">{formatPrice(product.originalPrice)}</span>
                   </>
                 ) : (
-                  <span className="current-price">{formatPrice(product.price)}</span>
+                  <span className="prod-current-price">{formatPrice(product.price)}</span>
                 )}
               </div>
 
               {/* Stock */}
-              <div className="product-stock">
+              <div className="prod-stock">
                 <i className="fas fa-box"></i>
-                <span className={product.stock < 5 ? 'low-stock' : ''}>
+                <span className={product.stock < 5 ? 'prod-low-stock' : ''}>
                   {product.stock} disponibles
                 </span>
               </div>
 
               {/* Acciones - SOLO BOTÓN VER MÁS */}
-              <div className="product-actions">
-                <Link to={`/producto/${product.id}`} className="view-details full-width">
+              <div className="prod-actions">
+                <Link to={`/producto/${product.id}`} className="prod-view-details">
                   <i className="fas fa-info-circle"></i>
                   Ver más
                 </Link>

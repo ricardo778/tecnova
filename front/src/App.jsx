@@ -10,6 +10,7 @@ import Productos from './components/productos';
 import Perfil from './components/perfil';
 import Factura from './components/factura';
 import Detalle_Producto from './components/detalle_producto';
+import Home from './components/home';
 import './index.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Navbar />
         <main className="main-content">
           <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/carrito" element={<Carrito />} />
             <Route path="/admin-login" element={<AdminLogin />} />
