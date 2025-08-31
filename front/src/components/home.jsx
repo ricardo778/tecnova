@@ -168,14 +168,10 @@ function Home() {
               <div className="home-product-info">
                 <h3>{product.name}</h3>
                 <p className="home-product-description">{product.description}</p>
-                <div className="home-product-rating">
-                  <span className="home-rating-text">({product.reviews})</span>
-                </div>
                 <div className="home-product-price">
                   {product.originalPrice ? (
                     <>
                       <span className="home-current-price">{formatPrice(product.price)}</span>
-                      <span className="home-original-price">{formatPrice(product.originalPrice)}</span>
                     </>
                   ) : (
                     <span className="home-current-price">{formatPrice(product.price)}</span>

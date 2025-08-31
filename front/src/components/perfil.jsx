@@ -5,6 +5,14 @@ function Profile() {
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState('personal');
+  const [changePassword, setChangePassword] = useState(false);
+  const [passwordData, setPasswordData] = useState({
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  });
+  const [passwordErrors, setPasswordErrors] = useState({});
+  const [passwordSuccess, setPasswordSuccess] = useState(false);
 
   // Datos de ejemplo del usuario
   useEffect(() => {
@@ -72,6 +80,89 @@ function Profile() {
       month: 'long',
       day: 'numeric'
     });
+  };
+
+  // Manejar cambio en los campos de contraseña
+  const handlePasswordChange = (e) => {
+    const { name, value } = e.target;
+    setPasswordData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+    
+    // Limpiar errores al escribir
+    if (passwordErrors[name]) {
+      setPasswordErrors(prev => ({
+        ...prev,
+        [name]: ''
+      }));
+    }
+  };
+
+  // Validar formulario de contraseña
+  const validatePasswordForm = () => {
+    const errors = {};
+    
+    if (!passwordData.currentPassword) {
+      errors.currentPassword = 'La contraseña actual es requerida';
+    }
+    
+    if (!passwordData.newPassword) {
+      errors.newPassword = 'La nueva contraseña es requerida';
+    } else if (passwordData.newPassword.length < 6) {
+      errors.newPassword = 'La contraseña debe tener al menos 6 caracteres';
+    }
+    
+    if (!passwordData.confirmPassword) {
+      errors.confirmPassword = 'Confirma tu nueva contraseña';
+    } else if (passwordData.newPassword !== passwordData.confirmPassword) {
+      errors.confirmPassword = 'Las contraseñas no coinciden';
+    }
+    
+    return errors;
+  };
+
+  // Enviar formulario de cambio de contraseña
+  const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    
+    const errors = validatePasswordForm();
+    if (Object.keys(errors).length > 0) {
+      setPasswordErrors(errors);
+      return;
+    }
+    
+    // Simular envío de formulario (en una app real, aquí se haría una petición al backend)
+    console.log('Cambiando contraseña:', {
+      currentPassword: passwordData.currentPassword,
+      newPassword: passwordData.newPassword
+    });
+    
+    // Simular éxito
+    setPasswordSuccess(true);
+    setPasswordData({
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: ''
+    });
+    
+    // Ocultar mensaje de éxito después de 3 segundos
+    setTimeout(() => {
+      setPasswordSuccess(false);
+      setChangePassword(false);
+    }, 3000);
+  };
+
+  // Cancelar cambio de contraseña
+  const handleCancelPassword = () => {
+    setChangePassword(false);
+    setPasswordData({
+      currentPassword: '',
+      newPassword: '',
+      confirmPassword: ''
+    });
+    setPasswordErrors({});
+    setPasswordSuccess(false);
   };
 
   if (loading) {
@@ -257,22 +348,92 @@ function Profile() {
             <div className="info-card">
               <h3>Configuración de Seguridad</h3>
               <div className="security-settings">
-                <div className="security-item">
-                  <i className="fas fa-lock"></i>
-                  <div className="security-info">
-                    <h4>Cambiar Contraseña</h4>
-                    <p>Actualiza tu contraseña de acceso</p>
+                {passwordSuccess && (
+                  <div className="security-message success">
+                    <i className="fas fa-check-circle"></i>
+                    <div className="message-content">
+                      <h4>¡Contraseña actualizada!</h4>
+                      <p>Tu contraseña ha sido cambiada exitosamente.</p>
+                    </div>
                   </div>
-                  <button className="change-btn">Cambiar</button>
-                </div>
-                <div className="security-item">
-                  <i className="fas fa-phone"></i>
-                  <div className="security-info">
-                    <h4>Actualizar Teléfono</h4>
-                    <p>Modifica tu número de contacto</p>
+                )}
+                
+                {!changePassword ? (
+                  <div className="security-option">
+                    <div className="security-info">
+                      <i className="fas fa-lock"></i>
+                      <div className="security-details">
+                        <h4>Cambiar Contraseña</h4>
+                        <p>Actualiza tu contraseña de acceso regularmente para mantener tu cuenta segura</p>
+                      </div>
+                    </div>
+                    <button 
+                      className="change-btn"
+                      onClick={() => setChangePassword(true)}
+                    >
+                      Cambiar
+                    </button>
                   </div>
-                  <button className="change-btn">Actualizar</button>
-                </div>
+                ) : (
+                  <form className="password-form" onSubmit={handlePasswordSubmit}>
+                    <div className="form-group">
+                      <label htmlFor="currentPassword">Contraseña Actual</label>
+                      <input
+                        type="password"
+                        id="currentPassword"
+                        name="currentPassword"
+                        value={passwordData.currentPassword}
+                        onChange={handlePasswordChange}
+                        className={passwordErrors.currentPassword ? 'error' : ''}
+                        placeholder="Ingresa tu contraseña actual"
+                      />
+                      {passwordErrors.currentPassword && (
+                        <span className="error-message">{passwordErrors.currentPassword}</span>
+                      )}
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="newPassword">Nueva Contraseña</label>
+                      <input
+                        type="password"
+                        id="newPassword"
+                        name="newPassword"
+                        value={passwordData.newPassword}
+                        onChange={handlePasswordChange}
+                        className={passwordErrors.newPassword ? 'error' : ''}
+                        placeholder="Ingresa tu nueva contraseña"
+                      />
+                      {passwordErrors.newPassword && (
+                        <span className="error-message">{passwordErrors.newPassword}</span>
+                      )}
+                    </div>
+                    
+                    <div className="form-group">
+                      <label htmlFor="confirmPassword">Confirmar Nueva Contraseña</label>
+                      <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        value={passwordData.confirmPassword}
+                        onChange={handlePasswordChange}
+                        className={passwordErrors.confirmPassword ? 'error' : ''}
+                        placeholder="Confirma tu nueva contraseña"
+                      />
+                      {passwordErrors.confirmPassword && (
+                        <span className="error-message">{passwordErrors.confirmPassword}</span>
+                      )}
+                    </div>
+                    
+                    <div className="form-actions">
+                      <button type="button" className="cancel-btn" onClick={handleCancelPassword}>
+                        Cancelar
+                      </button>
+                      <button type="submit" className="save-btn">
+                        Guardar Cambios
+                      </button>
+                    </div>
+                  </form>
+                )}
               </div>
             </div>
           </div>

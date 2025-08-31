@@ -1,4 +1,4 @@
-/* Profile.css - Estilos simplificados para el componente de perfil */
+/* perfil.css - Estilos específicos para la página de perfil */
 .profile-container {
   max-width: 1000px;
   margin: 0 auto;
@@ -7,16 +7,14 @@
 
 /* Header del perfil */
 .profile-header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border-radius: 15px;
-  padding: 2rem;
-  color: white;
-  margin-bottom: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
+  border-radius: 15px;
+  color: white;
 }
 
 .profile-avatar {
@@ -39,22 +37,24 @@
 .profile-info h1 {
   margin: 0 0 0.5rem 0;
   font-size: 1.8rem;
+  font-weight: 600;
 }
 
 .profile-email {
   margin: 0 0 1rem 0;
   opacity: 0.9;
+  font-size: 1rem;
 }
 
 .membership-badge {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  backdrop-filter: blur(10px);
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .profile-stats {
@@ -77,36 +77,41 @@
   opacity: 0.9;
 }
 
-/* Pestañas de navegación */
+/* Navegación por pestañas */
 .profile-tabs {
   display: flex;
-  gap: 0;
+  gap: 0.5rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid #e1e5eb;
+  padding-bottom: 1rem;
 }
 
 .tab-btn {
-  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
   border: none;
   background: none;
   color: #666;
   cursor: pointer;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  border-bottom: 3px solid transparent;
 }
 
 .tab-btn:hover {
+  background: #f8f9fa;
   color: #4776E6;
 }
 
 .tab-btn.active {
-  color: #4776E6;
-  border-bottom-color: #4776E6;
-  background: rgba(71, 118, 230, 0.1);
+  background: #4776E6;
+  color: white;
+}
+
+.tab-btn i {
+  font-size: 1.1rem;
 }
 
 /* Contenido de las pestañas */
@@ -118,6 +123,7 @@
   color: #333;
   margin-bottom: 1.5rem;
   font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /* Tarjetas de información */
@@ -133,53 +139,54 @@
   color: #333;
   margin-bottom: 1.5rem;
   font-size: 1.3rem;
+  font-weight: 600;
   border-bottom: 2px solid #f1f3f4;
   padding-bottom: 0.5rem;
 }
 
 .info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
 }
 
 .info-item {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
 
 .info-item label {
   font-weight: 600;
   color: #666;
-  margin-bottom: 0.5rem;
   font-size: 0.9rem;
 }
 
 .info-item p {
-  margin: 0;
   color: #333;
+  margin: 0;
   font-size: 1rem;
 }
 
 /* Botones de acción */
 .action-buttons {
   display: flex;
-  gap: 1rem;
+  justify-content: flex-end;
   margin-top: 2rem;
 }
 
 .edit-btn {
-  background: linear-gradient(90deg, #4776E6 0%, #8E54E9 100%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #4776E6 0%, #8E54E9 100%);
   color: white;
   border: none;
-  padding: 1rem 2rem;
   border-radius: 8px;
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .edit-btn:hover {
@@ -197,12 +204,7 @@
   background: white;
   border-radius: 12px;
   padding: 1.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.order-card:hover {
-  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .order-header {
@@ -215,12 +217,13 @@
 .order-info {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .order-id {
   font-weight: 600;
   color: #333;
+  font-size: 1.1rem;
 }
 
 .order-date {
@@ -231,14 +234,14 @@
 .order-status {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
 }
 
 .status-badge {
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   font-size: 0.8rem;
   font-weight: 600;
+  text-transform: uppercase;
 }
 
 .status-badge.entregado {
@@ -265,106 +268,50 @@
 
 .order-products {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 0.5rem;
 }
 
 .product-name {
-  background: #f8f9fa;
-  padding: 0.3rem 0.8rem;
-  border-radius: 12px;
-  font-size: 0.9rem;
   color: #666;
+  font-size: 0.9rem;
 }
 
 .order-total {
+  font-size: 1.2rem;
   font-weight: 700;
   color: #4776E6;
-  font-size: 1.1rem;
 }
 
 .order-actions {
   display: flex;
-  gap: 0.8rem;
+  justify-content: flex-end;
 }
 
 .view-order-btn {
-  padding: 0.5rem 1rem;
-  border: 1px solid #e1e5eb;
-  border-radius: 6px;
-  background: white;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.3s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f8f9fa;
+  color: #333;
+  border: 1px solid #e1e5eb;
+  border-radius: 6px;
   font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .view-order-btn:hover {
+  background: #e9ecef;
   border-color: #4776E6;
   color: #4776E6;
 }
 
-/* Configuración de seguridad */
-.security-settings {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.security-item {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: #f8f9fa;
-  border-radius: 8px;
-}
-
-.security-item i {
-  font-size: 1.5rem;
-  color: #4776E6;
-  width: 40px;
-  text-align: center;
-}
-
-.security-info {
-  flex: 1;
-}
-
-.security-info h4 {
-  margin: 0 0 0.3rem 0;
-  color: #333;
-}
-
-.security-info p {
-  margin: 0;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.change-btn {
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 6px;
-  background: #4776E6;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-weight: 500;
-}
-
-.change-btn:hover {
-  background: #3b5fc7;
-  transform: translateY(-2px);
-}
-
-/* Estados vacíos */
+/* Estado vacío */
 .empty-state {
   text-align: center;
-  padding: 3rem 2rem;
+  padding: 3rem;
   color: #666;
 }
 
@@ -375,8 +322,187 @@
 }
 
 .empty-state p {
-  margin-bottom: 1.5rem;
   font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Configuración de seguridad */
+.security-settings {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.security-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4776E6;
+}
+
+.security-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.security-info i {
+  font-size: 1.5rem;
+  color: #4776E6;
+}
+
+.security-details h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.security-details p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.change-btn {
+  padding: 0.8rem 1.5rem;
+  background: #4776E6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.change-btn:hover {
+  background: #3a62c0;
+  transform: translateY(-2px);
+}
+
+/* Formulario de contraseña */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4776E6;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.form-group input {
+  padding: 0.8rem 1rem;
+  border: 2px solid #e1e5eb;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4776E6;
+  box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.1);
+}
+
+.form-group input.error {
+  border-color: #dc3545;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.cancel-btn {
+  padding: 0.8rem 1.5rem;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+}
+
+.save-btn {
+  padding: 0.8rem 1.5rem;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  background: #218838;
+}
+
+/* Mensajes de seguridad */
+.security-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #4776E6;
+}
+
+.security-message.success {
+  border-left-color: #28a745;
+}
+
+.security-message i {
+  font-size: 1.5rem;
+  color: #4776E6;
+  margin-top: 0.25rem;
+}
+
+.security-message.success i {
+  color: #28a745;
+}
+
+.message-content h4 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.message-content p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+  font-size: 0.95rem;
 }
 
 /* Estado de carga */
@@ -410,6 +536,7 @@
   
   .profile-header {
     flex-direction: column;
+    gap: 1.5rem;
     text-align: center;
     padding: 1.5rem;
   }
@@ -419,19 +546,13 @@
     text-align: center;
   }
   
-  .profile-stats {
-    justify-content: center;
-  }
-  
   .profile-tabs {
-    overflow-x: auto;
-    padding-bottom: 0.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
   
   .tab-btn {
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
-    white-space: nowrap;
+    justify-content: center;
   }
   
   .info-grid {
@@ -450,37 +571,28 @@
     align-items: flex-start;
   }
   
-  .security-item {
+  .security-option {
     flex-direction: column;
+    gap: 1rem;
     text-align: center;
-    gap: 0.8rem;
   }
   
-  .change-btn {
+  .security-info {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .cancel-btn, .save-btn {
     width: 100%;
   }
 }
 
 @media (max-width: 480px) {
-  .profile-header {
-    padding: 1rem;
-  }
-  
-  .avatar-circle {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-  
   .profile-info h1 {
-    font-size: 1.5rem;
-  }
-  
-  .profile-stats {
-    gap: 1.5rem;
-  }
-  
-  .stat-number {
     font-size: 1.5rem;
   }
   
@@ -489,10 +601,20 @@
   }
   
   .action-buttons {
-    flex-direction: column;
+    justify-content: center;
   }
   
   .edit-btn {
+    width: 100%;
     justify-content: center;
+  }
+  
+  .security-message {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .security-message i {
+    align-self: center;
   }
 }

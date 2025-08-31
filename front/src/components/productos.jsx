@@ -281,7 +281,6 @@ function Products() {
                 {product.originalPrice ? (
                   <>
                     <span className="prod-current-price">{formatPrice(product.price)}</span>
-                    <span className="prod-original-price">{formatPrice(product.originalPrice)}</span>
                   </>
                 ) : (
                   <span className="prod-current-price">{formatPrice(product.price)}</span>
