@@ -231,19 +231,88 @@ function Home() {
         </div>
       </section>
 
-      {/* Ofertas Especiales */}
-      <section className="offers-section">
-        <div className="offer-banner">
-          <div className="offer-content">
-            <h2>Oferta Especial</h2>
-            <h3>Hasta 40% OFF en Laptops Gaming</h3>
-            <p>Solo por tiempo limitado. Aprovecha ahora mismo.</p>
-            <Link to="/productos?category=laptops" className="btn-primary">
-              Ver Ofertas
-            </Link>
+      {/* Testimonios de Clientes */}
+      <section className="testimonials-section">
+        <div className="section-header">
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>Experiencias reales de quienes han confiado en nosotros</p>
+        </div>
+        
+        <div className="testimonials-container">
+          <div className="testimonials-track">
+            <div className="testimonial-card">
+              <div className="testimonial-content">
+                <div className="quote-icon">
+                  <i className="fas fa-quote-left"></i>
+                </div>
+                <p className="testimonial-text">
+                  "Compré una laptop gaming y superó todas mis expectativas. El rendimiento es excepcional y el proceso de compra fue muy sencillo."
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-avatar">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Carlos Rodríguez" />
+                  </div>
+                  <div className="author-details">
+                    <h4>Carlos Rodríguez</h4>
+                    <p>Diseñador gráfico</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="testimonial-card">
+              <div className="testimonial-content">
+                <div className="quote-icon">
+                  <i className="fas fa-quote-left"></i>
+                </div>
+                <p className="testimonial-text">
+                  "El servicio al cliente es excelente. Me asesoraron perfectamente para encontrar el equipo que necesitaba para programar."
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-avatar">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Laura Méndez" />
+                  </div>
+                  <div className="author-details">
+                    <h4>Laura Méndez</h4>
+                    <p>Desarrolladora de software</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="testimonial-card">
+              <div className="testimonial-content">
+                <div className="quote-icon">
+                  <i className="fas fa-quote-left"></i>
+                </div>
+                <p className="testimonial-text">
+                  "Entrega rápida y el producto llegó en perfectas condiciones. La laptop gaming que compré funciona increíblemente bien para streaming."
+                </p>
+                <div className="testimonial-author">
+                  <div className="author-avatar">
+                    <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Javier López" />
+                  </div>
+                  <div className="author-details">
+                    <h4>Javier López</h4>
+                    <p>Streamer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="offer-image">
-            <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bGFwdG9wJTIwZ2FtaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=80" alt="Oferta Laptops" />
+          
+          <div className="testimonials-controls">
+            <button className="control-btn prev-btn">
+              <i className="fas fa-chevron-left"></i>
+            </button>
+            <div className="testimonials-dots">
+              <span className="dot active"></span>
+              <span className="dot"></span>
+              <span className="dot"></span>
+            </div>
+            <button className="control-btn next-btn">
+              <i className="fas fa-chevron-right"></i>
+            </button>
           </div>
         </div>
       </section>
