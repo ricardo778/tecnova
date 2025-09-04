@@ -249,14 +249,37 @@ function Home() {
       </section>
 
       {/* Newsletter */}
-      <section className="newsletter-section">
-        <div className="newsletter-content">
-          <h2>Suscríbete a nuestro newsletter</h2>
-          <p>Recibe las últimas novedades, ofertas exclusivas y descuentos especiales</p>
-          <div className="newsletter-form">
-            <input type="email" placeholder="Tu correo electrónico" />
-            <button className="btn-primary">Suscribirse</button>
-          </div>
+      {/* Formulario de Sugerencias */}
+      <section className="suggestions-section">
+        <div className="suggestions-content">
+          <h2>Envíanos tus Sugerencias</h2>
+          <p>¿Tienes ideas para mejorar? ¡Valoramos mucho tu opinión!</p>
+          
+          <form className="suggestions-form" >
+            <div className="form-group">
+              <input 
+                type="email" 
+                placeholder="Tu correo electrónico" 
+                required
+              />
+            </div>
+            
+            <div className="form-group">
+              <textarea 
+                placeholder="Escribe aquí tu sugerencia..."
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            
+            <button type="submit" className="btn-primary">
+              <i className="fas fa-paper-plane"></i> Enviar sugerencia
+            </button>
+          </form>
+          
+          <p className="suggestions-note">
+            Nos pondremos en contacto contigo si necesitamos más detalles sobre tu sugerencia.
+          </p>
         </div>
       </section>
     </div>

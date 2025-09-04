@@ -648,3 +648,143 @@
 .benefit-card:nth-child(2) { animation-delay: 0.2s; }
 .benefit-card:nth-child(3) { animation-delay: 0.3s; }
 .benefit-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* Sección de Sugerencias - Reemplaza Newsletter */
+.suggestions-section {
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+  margin: 3rem 0;
+}
+
+.suggestions-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.suggestions-content h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.suggestions-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.suggestions-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.suggestions-form input,
+.suggestions-form textarea {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.95);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.suggestions-form input:focus,
+.suggestions-form textarea:focus {
+  background: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.suggestions-form input::placeholder,
+.suggestions-form textarea::placeholder {
+  color: #666;
+}
+
+.suggestions-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.suggestions-form button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  background: #ff6b6b;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto;
+}
+
+.suggestions-form button:hover {
+  background: #ff5252;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.suggestions-note {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  font-style: italic;
+  margin-top: 1rem;
+  line-height: 1.4;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .suggestions-section {
+    padding: 3rem 1.5rem;
+    margin: 2rem 0;
+  }
+  
+  .suggestions-form {
+    gap: 1.25rem;
+  }
+  
+  .suggestions-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .suggestions-content p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .suggestions-section {
+    padding: 2rem 1rem;
+  }
+  
+  .suggestions-content h2 {
+    font-size: 1.6rem;
+  }
+  
+  .suggestions-form input,
+  .suggestions-form textarea {
+    padding: 0.875rem 1.25rem;
+  }
+  
+  .suggestions-form button {
+    padding: 0.875rem 1.5rem;
+    width: 100%;
+  }
+}

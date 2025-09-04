@@ -10,19 +10,24 @@ function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // ← CORRECCIÓN: useNavigate() no useState()
+
+  // Credenciales de administrador - CORREGIDAS
+  const adminCredentials = {
+    code: 'MIN2024', // ← "MIN2024" no "import"
+    password: 'AdminTecnova123!' // ← "!" no "1" al final
+  };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value // ← CORRECCIÓN DE SINTAXIS
     });
-    // Limpiar error cuando el usuario empiece a escribir
     if (error) setError('');
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ← CORRECCIÓN: e.preventDefault() no elementDefault()
     setIsLoading(true);
     setError('');
 
@@ -35,12 +40,20 @@ function AdminLogin() {
 
     // Simular proceso de login de administrador
     setTimeout(() => {
-      // Simular credenciales válidas (en una app real esto vendría del backend)
-      const isValidAdmin = formData.adminCode === 'ADMIN2024' && formData.password === 'AdminTecnova123!';
-      
+      // Verificar contra las credenciales
+      const isValidAdmin =
+        formData.adminCode === adminCredentials.code &&
+        formData.password === adminCredentials.password;
+
       if (isValidAdmin) {
         console.log('Login administrativo exitoso');
-        navigate('/admin/dashboard'); // Redirigir al panel de administración
+        // Guardar en localStorage para mantener la sesión
+        localStorage.setItem('adminAuthenticated', 'true');
+        localStorage.setItem('adminUser', formData.adminCode);
+
+        // REDIRIGIR AL PANEL - FORZAR RECARGA COMPLETA
+        window.location.href = '/productos_control';
+
       } else {
         setError('Código de administrador o contraseña incorrectos');
       }
@@ -74,14 +87,13 @@ function AdminLogin() {
               Código de Administrador
             </label>
             <div className="input-with-icon">
-              <i className="fas fa-id-card"></i>
               <input
                 type="text"
                 id="adminCode"
                 name="adminCode"
                 value={formData.adminCode}
                 onChange={handleChange}
-                placeholder="ADMIN-XXXX-XXXX"
+                placeholder="MIN2024"
                 required
                 className={error ? 'error' : ''}
               />
@@ -94,14 +106,13 @@ function AdminLogin() {
               Contraseña de Administrador
             </label>
             <div className="input-with-icon">
-              <i className="fas fa-lock"></i>
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                placeholder="Ingresa tu contraseña administrativa"
+                placeholder="AdminTecnova123!"
                 required
                 className={error ? 'error' : ''}
               />

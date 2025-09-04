@@ -45,16 +45,18 @@ function Login() {
 
         <form onSubmit={handleSubmit} className="login-form">
           <div className="form-group">
-            <label htmlFor="email">Correo electrónico</label>
-            <div className="input-with-icon">
+            <label htmlFor="email">
               <i className="fas fa-envelope"></i>
+              Correo electrónico
+            </label>
+            <div className="input-with-icon">
               <input
                 type="email"
                 id="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="tu@email.com"
+                placeholder="ejemplo@email.com"
                 required
               />
             </div>
@@ -66,7 +68,6 @@ function Login() {
               Contraseña
             </label>
             <div className="input-with-icon">
-              <i className="fas fa-lock"></i> {/* Icono izquierdo */}
               <input
                 type={showPassword ? "text" : "password"}
                 id="password"
