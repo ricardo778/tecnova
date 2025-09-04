@@ -66,7 +66,9 @@ function Navbar() {
         </li>
       </ul>
       <div className="nav-profile">
-        <img src="https://placehold.co/40x40/4776E6/FFFFFF?text=U" alt="Foto de perfil" className="profile-picture" />
+        <div className="profile-icon-container">
+          <i className="fas fa-user-circle profile-icon"></i>
+        </div>
         <Link to="/perfil" className="profile-link">
           Perfil
         </Link>

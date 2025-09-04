@@ -235,6 +235,87 @@ body {
     margin-top: 0.5rem;
   }
 }
+/* Estilos para el contenedor de perfil */
+.nav-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.profile-icon-container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-icon {
+  font-size: 2.2rem;
+  color: white;
+  transition: all 0.3s ease;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.profile-icon:hover {
+  color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.profile-link {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.profile-link:hover {
+  color: #e0e0e0;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1024px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  
+  .nav-links {
+    margin: 1rem 0;
+    flex-wrap: wrap;
+  }
+  
+  .nav-profile {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .nav-links a, .dropdown-toggle {
+    justify-content: center;
+    border-radius: 0.5rem;
+  }
+  
+  .dropdown-menu {
+    position: static;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  
+  .profile-icon {
+    font-size: 1.8rem;
+  }
+  
+  .profile-link {
+    font-size: 0.8rem;
+  }
+}
 /* Fin de los estilos de la navbar */
-
-
