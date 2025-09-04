@@ -41,7 +41,7 @@ function Carrito() {
         address: 'Calle 123 #45-67',
         city: 'Bogotá'
       };
-      
+
       setUserData(user);
       setLoading(false);
     }, 500);
@@ -67,8 +67,8 @@ function Carrito() {
   // Actualizar cantidad de un producto
   const updateQuantity = (id, newQuantity) => {
     if (newQuantity < 1) return;
-    
-    setCartItems(cartItems.map(item => 
+
+    setCartItems(cartItems.map(item =>
       item.id === id ? { ...item, quantity: newQuantity } : item
     ));
   };
@@ -98,13 +98,13 @@ function Carrito() {
 
     // Guardar en localStorage para persistencia
     localStorage.setItem('tecnovaCart', JSON.stringify(cartItems));
-    
+
     // Navegar a la página de factura con los datos
-    navigate('/factura', { 
-      state: { 
-        cartItems, 
-        customerInfo: userData 
-      } 
+    navigate('/factura', {
+      state: {
+        cartItems,
+        customerInfo: userData
+      }
     });
   };
 
@@ -154,14 +154,14 @@ function Carrito() {
                     )}
                   </div>
                   <div className="item-quantity">
-                    <button 
+                    <button
                       className="quantity-btn"
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
                     >
                       <i className="fas fa-minus"></i>
                     </button>
                     <span>{item.quantity}</span>
-                    <button 
+                    <button
                       className="quantity-btn"
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                     >
@@ -172,7 +172,7 @@ function Carrito() {
                     <p>{formatPrice(item.price * item.quantity)}</p>
                   </div>
                   <div className="item-actions">
-                    <button 
+                    <button
                       className="remove-btn"
                       onClick={() => removeItem(item.id)}
                     >
@@ -189,38 +189,38 @@ function Carrito() {
           <div className="carrito-summary">
             <div className="summary-card">
               <h2>Resumen de compra</h2>
-              
+
               <div className="summary-line">
                 <span>Subtotal:</span>
                 <span>{formatPrice(subtotal)}</span>
               </div>
-              
+
               {discountApplied && (
                 <div className="summary-line discount">
                   <span>Descuento (10%):</span>
                   <span>-{formatPrice(discount)}</span>
                 </div>
               )}
-              
+
               <div className="summary-line">
                 <span>Impuestos (16%):</span>
                 <span>{formatPrice(tax)}</span>
               </div>
-              
+
               <div className="summary-line total">
                 <span>Total:</span>
                 <span>{formatPrice(total)}</span>
               </div>
 
               <div className="discount-input">
-                <input 
-                  type="text" 
-                  placeholder="Código de descuento (opcional)" 
+                <input
+                  type="text"
+                  placeholder="Código de descuento (opcional)"
                   value={discountCode}
                   onChange={(e) => setDiscountCode(e.target.value)}
                   disabled={discountApplied}
                 />
-                <button 
+                <button
                   className="apply-btn"
                   onClick={applyDiscount}
                   disabled={discountApplied}
@@ -229,12 +229,12 @@ function Carrito() {
                 </button>
               </div>
 
-              <button 
-                className="checkout-btn" 
+              <button
+                className="checkout-btn"
                 onClick={handleCheckout}
                 disabled={!userData}
               >
-                <i className="fas fa-lock"></i> 
+                <i className="fas fa-lock"></i>
                 {userData ? 'Proceder al Pago' : 'Inicia sesión para pagar'}
               </button>
 
@@ -246,21 +246,21 @@ function Carrito() {
             <div className="security-info">
               <div className="security-item">
                 <i className="fas fa-shield-alt"></i>
-                <div>
+                <div className="security-item-content">
                   <h4>Compra segura</h4>
                   <p>Protegemos tus datos personales</p>
                 </div>
               </div>
               <div className="security-item">
                 <i className="fas fa-truck"></i>
-                <div>
+                <div className="security-item-content">
                   <h4>Envío gratis</h4>
                   <p>En compras mayores a $500.000</p>
                 </div>
               </div>
               <div className="security-item">
                 <i className="fas fa-undo"></i>
-                <div>
+                <div className="security-item-content">
                   <h4>Devoluciones</h4>
                   <p>30 días para cambiar de opinión</p>
                 </div>
