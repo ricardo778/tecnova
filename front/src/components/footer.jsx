@@ -23,7 +23,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        
+
         <div className="footer-section">
           <h4>Contacto</h4>
           <div className="contact-info">
@@ -41,7 +41,7 @@ function Footer() {
             </p>
           </div>
         </div>
-        
+
         <div className="footer-section">
           <h4>Enlaces Rápidos</h4>
           <ul className="footer-links">
@@ -52,27 +52,21 @@ function Footer() {
             <li><a href="#">Soporte Técnico</a></li>
           </ul>
         </div>
-        
-        <div className="footer-section">
-          <h4>Suscríbete</h4>
-          <p>Recibe las últimas novedades y ofertas</p>
-          <div className="subscribe-form">
-            <input 
-              type="email" 
-              placeholder="Tu correo electrónico" 
-              className="email-input"
-            />
-            <button className="subscribe-btn">
-              <i className="fas fa-paper-plane"></i>
-            </button>
+
+        <div className="footer-section tecnova-message-section">
+          <h4>Tecnova</h4>
+          <p>Innovación y tecnología para todos</p>
+          <div className="tecnova-message">
+            <i className="fas fa-heart"></i>
+            <span>Hecho con dedicación para ustedes</span>
           </div>
         </div>
       </div>
-      
+
       <div className="footer-bottom">
         <p>&copy; 2025 Tecnova. Todos los derechos reservados.</p>
         <p>
-          <a href="#">Términos y Condiciones</a> | 
+          <a href="#">Términos y Condiciones</a> |
           <a href="#"> Política de Privacidad</a>
         </p>
       </div>

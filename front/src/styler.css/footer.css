@@ -173,3 +173,64 @@
     justify-content: center;
   }
 }
+/* Footer Tecnova Message - Integrado CORREGIDO */
+.footer-section .tecnova-message-section h4 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+
+.footer-section .tecnova-message-section p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  text-align: center;
+  font-style: italic;
+}
+
+.tecnova-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  border-left: 3px solid #FF3366;
+  margin-top: 0.5rem;
+}
+
+.tecnova-message i {
+  color: #FF3366;
+  font-size: 1rem;
+}
+
+.tecnova-message span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Design para el mensaje de Tecnova */
+@media (max-width: 768px) {
+  .footer-section .tecnova-message-section h4 {
+    font-size: 1.2rem;
+  }
+  
+  .footer-section .tecnova-message-section p {
+    font-size: 0.85rem;
+  }
+  
+  .tecnova-message {
+    padding: 0.6rem;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-align: center;
+  }
+  
+  .tecnova-message span {
+    font-size: 0.8rem;
+  }
+}
